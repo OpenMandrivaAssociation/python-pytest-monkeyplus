@@ -1,0 +1,12 @@
+diff --git a/setup.py b/setup.py
+index 1231537..0387912 100644
+--- a/setup.py
++++ b/setup.py
+@@ -20,5 +20,5 @@ setup(
+     url='http://bitbucket.org/hsoft/pytest-monkeyplus/',
+     py_modules=['pytest_monkeyplus'],
+     entry_points={'pytest11': ['monkeyplus = pytest_monkeyplus']},
+-    install_requires=['pytest>=2.0'],
++    install_requires=['pytest'],
+ )
+\ No newline at end of file

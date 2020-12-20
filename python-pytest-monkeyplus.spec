@@ -5,21 +5,23 @@
 
 Name:           python-%{pypi_name}
 Version:        20201219
-Release:        1
+Release:        2
 Summary:        pytest-monkeyplus - monkeypatch with extras
 
 License:        MIT
 URL:            https://github.com/thodnev/MonkeyTest
 Source0:        https://files.pythonhosted.org/packages/source/s/%{pypi_name}/python-%{pypi_name}-%{version}.tar.xz
+Patch0:         fix-requires.patch
 BuildArch:      noarch
 
 BuildRequires:  python-devel
 BuildRequires:  python-setuptools
 
-#%if %{with tests}
-#BuildRequires:  python-attrs
-#BuildRequires:  python-pytz
-#%endif
+%if %{with tests}
+BuildRequires:  python-attrs
+BuildRequires:  python-pytz
+Buildrequires:  python-pytest
+%endif
 Requires:       python-pytest
 
 
@@ -35,6 +37,7 @@ patch_time_ticking
 %setup -n python-%{pypi_name}-%{version}
 # Remove bundled egg-info
 rm -rf python-%{pypi_name}.egg-info
+%autopatch -p1
 
 %build
 %py3_build
