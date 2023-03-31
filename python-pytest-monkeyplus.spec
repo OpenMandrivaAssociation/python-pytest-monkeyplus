@@ -5,7 +5,7 @@
 
 Name:           python-%{pypi_name}
 Version:        20201219
-Release:        2
+Release:        3
 Summary:        pytest-monkeyplus - monkeypatch with extras
 
 License:        MIT
