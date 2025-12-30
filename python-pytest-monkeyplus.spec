@@ -4,7 +4,7 @@
 
 Name:           python-pytest-monkeyplus
 Version:        1.1.0
-Release:        2
+Release:        3
 Summary:        pytest-monkeyplus - monkeypatch with extras
 
 License:        MIT
