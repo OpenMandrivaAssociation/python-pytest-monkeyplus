@@ -4,24 +4,25 @@
 
 Name:           python-pytest-monkeyplus
 Version:        1.1.0
-Release:        3
+Release:        4
 Summary:        pytest-monkeyplus - monkeypatch with extras
 
 License:        MIT
+Group:          Development/Python
 URL:            https://github.com/thodnev/MonkeyTest
 Source0:        https://files.pythonhosted.org/packages/source/p/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 Patch0:         fix-requires.patch
 BuildArch:      noarch
 
-BuildRequires:  python-devel
-BuildRequires:  python-setuptools
+BuildRequires:  python
+BuildRequires:  python%{pyver}dist(setuptools)
 
 %if %{with tests}
-BuildRequires:  python-attrs
-BuildRequires:  python-pytz
-Buildrequires:  python-pytest
+BuildRequires:  python%{pyver}dist(attrs)
+BuildRequires:  python%{pyver}dist(pytz)
+BuildRequires:  python%{pyver}dist(pytest)
 %endif
-Requires:       python-pytest
+Requires:       python%{pyver}dist(pytest)
 
 
 %description
